@@ -50,12 +50,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/eggjs/egg-filestore.git"
+    "url": "git+https://github.com/Micjoyce/egg-filestore.git"
   },
   "bugs": {
-    "url": "https://github.com/eggjs/egg/issues"
+    "url": "https://github.com/Micjoyce/egg-filestore/issues"
   },
-  "homepage": "https://github.com/eggjs/egg-filestore#readme",
+  "homepage": "https://github.com/Micjoyce/egg-filestore#readme",
   "author": "micjoyce90@gmail.com",
   "license": "MIT"
 }
