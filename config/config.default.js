@@ -19,6 +19,7 @@ exports.filestore = {
   // client: {
   //   type: 'AliOss',
   //   aliCategory: 'uploads',
+  //   downloadPath: '/source/upload',
   // },
 
   // Multi Redis
@@ -26,6 +27,7 @@ exports.filestore = {
   //   instance1: {
   //     type: 'AliOss',
   //     aliCategory: 'uploads',
+  //     downloadPath: '/source/upload',
   //   },
   //   instance2: {
   //     type: 'FileSystem',

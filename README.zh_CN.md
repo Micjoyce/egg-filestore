@@ -81,6 +81,7 @@ exports.filestore = {
 exports.filestore = {
   type: 'AliOss',
   aliCategory: 'uploads',
+  downloadPath: '/source/upload',
 }
 ```
 
@@ -92,6 +93,7 @@ exports.filestore = {
     instance1: {
       type: 'AliOss',
       aliCategory: 'uploads',
+      downloadPath: '/source/upload',
     },
     instance2: {
       type: 'FileSystem',
