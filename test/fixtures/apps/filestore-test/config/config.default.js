@@ -16,6 +16,7 @@ exports.filestore = {
     instance2: {
       type: 'FileSystem',
       prefixUrl: '/source/upload',
+      directory: '~/uploads', // default '~/uploads'
     },
   },
 };

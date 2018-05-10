@@ -13,6 +13,7 @@ exports.filestore = {
   // client: {
   //   type: 'FileSystem',
   //   prefixUrl: '/source/upload',
+  //   directory: '~/uploads'  // default '~/uploads'
   // },
 
   // Single AliOss
@@ -32,6 +33,7 @@ exports.filestore = {
   //   instance2: {
   //     type: 'FileSystem',
   //     prefixUrl: '/source/upload',
+  //     directory: '~/uploads'  // default '~/uploads'
   //   },
   // },
 };

@@ -72,6 +72,7 @@ exports.filestore = {
 exports.filestore = {
   type: 'FileSystem',
   prefixUrl: '/source/upload',
+  directory: '~/uploads'  // default '~/uploads'
 }
 ```
 

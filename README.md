@@ -58,6 +58,7 @@ see [config/config.default.js](config/config.default.js) for more detail.
 exports.filestore = {
   type: 'FileSystem',
   prefixUrl: '/source/upload',
+  directory: '~/uploads'  // default '~/uploads'
 }
 ```
 
@@ -84,6 +85,7 @@ exports.filestore = {
     instance2: {
       type: 'FileSystem',
       prefixUrl: '/source/upload',
+      directory: '~/uploads'  // default '~/uploads'
     },
   },
 }
