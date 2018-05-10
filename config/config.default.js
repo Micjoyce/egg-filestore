@@ -12,14 +12,14 @@ exports.filestore = {
   // Single FileSystem
   // client: {
   //   type: 'FileSystem',
-  //   downloadPath: '/source/upload',
+  //   prefixUrl: '/source/upload',
   // },
 
   // Single AliOss
   // client: {
   //   type: 'AliOss',
   //   aliCategory: 'uploads',
-  //   downloadPath: '/source/upload',
+  //   prefixUrl: '/source/upload',
   // },
 
   // Multi Redis
@@ -27,11 +27,11 @@ exports.filestore = {
   //   instance1: {
   //     type: 'AliOss',
   //     aliCategory: 'uploads',
-  //     downloadPath: '/source/upload',
+  //     prefixUrl: '/source/upload',
   //   },
   //   instance2: {
   //     type: 'FileSystem',
-  //     downloadPath: '/source/upload',
+  //     prefixUrl: '/source/upload',
   //   },
   // },
 };

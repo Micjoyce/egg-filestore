@@ -71,7 +71,7 @@ exports.filestore = {
 ```js
 exports.filestore = {
   type: 'FileSystem',
-  downloadPath: '/source/upload',
+  prefixUrl: '/source/upload',
 }
 ```
 
@@ -81,7 +81,7 @@ exports.filestore = {
 exports.filestore = {
   type: 'AliOss',
   aliCategory: 'uploads',
-  downloadPath: '/source/upload',
+  prefixUrl: '/source/upload',
 }
 ```
 
@@ -93,11 +93,12 @@ exports.filestore = {
     instance1: {
       type: 'AliOss',
       aliCategory: 'uploads',
-      downloadPath: '/source/upload',
+      prefixUrl: '/source/upload',
     },
     instance2: {
       type: 'FileSystem',
-      downloadPath: '/source/upload',
+      prefixUrl: '/source/upload',
+      directory: '~/uploads'  // default '~/uploads'
     },
   },
 }

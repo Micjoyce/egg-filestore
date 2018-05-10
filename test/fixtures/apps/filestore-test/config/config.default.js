@@ -11,11 +11,11 @@ exports.filestore = {
     instance1: {
       type: 'AliOss',
       aliCategory: 'uploads',
-      downloadPath: '/source/upload',
+      prefixUrl: '/source/upload',
     },
     instance2: {
       type: 'FileSystem',
-      downloadPath: '/source/upload',
+      prefixUrl: '/source/upload',
     },
   },
 };
