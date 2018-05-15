@@ -1,6 +1,6 @@
 {
   "name": "egg-filestore",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "egg filestore for aliyun oss and file system, support multi instance",
   "eggPlugin": {
     "name": "filestore"
@@ -11,6 +11,7 @@
     "egg-plugin"
   ],
   "dependencies": {
+    "ali-oss": "^5.2.0",
     "await-stream-ready": "^1.0.1",
     "image-downloader": "^3.3.0",
     "mime-types": "^2.1.18",

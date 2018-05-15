@@ -67,7 +67,7 @@ exports.filestore = {
 ```js
 exports.filestore = {
   type: 'AliOss',
-  aliCategory: 'uploads',
+  bucketCategory: 'uploads',
   prefixUrl: '/source/upload',
 }
 ```
@@ -79,7 +79,7 @@ exports.filestore = {
   clients: {
     instance1: {
       type: 'AliOss',
-      aliCategory: 'uploads',
+      bucketCategory: 'uploads',
       prefixUrl: '/source/upload',
     },
     instance2: {

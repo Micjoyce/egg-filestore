@@ -19,7 +19,7 @@ exports.filestore = {
   // Single AliOss
   // client: {
   //   type: 'AliOss',
-  //   aliCategory: 'uploads',
+  //   bucketCategory: 'uploads',
   //   prefixUrl: '/source/upload',
   // },
 
@@ -27,7 +27,7 @@ exports.filestore = {
   // clients: {
   //   instance1: {
   //     type: 'AliOss',
-  //     aliCategory: 'uploads',
+  //     bucketCategory: 'uploads',
   //     prefixUrl: '/source/upload',
   //   },
   //   instance2: {

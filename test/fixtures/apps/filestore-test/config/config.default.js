@@ -10,7 +10,7 @@ exports.filestore = {
   clients: {
     instance1: {
       type: 'AliOss',
-      aliCategory: 'uploads',
+      bucketCategory: 'uploads',
       prefixUrl: '/source/upload',
     },
     instance2: {
