@@ -67,8 +67,14 @@ exports.filestore = {
 ```js
 exports.filestore = {
   type: 'AliOss',
-  bucketCategory: 'uploads',
-  prefixUrl: '/source/upload',
+  options: { // ali-oss config
+    accessKeyId: 'access key',
+    accessKeySecret: 'access key secret',
+    bucket: 'you bucket',
+    region: 'oss-cn-hangzhou',
+    timeout: '60s',
+  },
+  category: 'uploads',
 }
 ```
 
@@ -79,8 +85,14 @@ exports.filestore = {
   clients: {
     instance1: {
       type: 'AliOss',
-      bucketCategory: 'uploads',
-      prefixUrl: '/source/upload',
+      options: {
+        accessKeyId: 'access key',
+        accessKeySecret: 'access key secret',
+        bucket: 'you bucket',
+        region: 'oss-cn-hangzhou',
+        timeout: '60s',
+      },
+      category: 'uploads',
     },
     instance2: {
       type: 'FileSystem',
@@ -105,10 +117,7 @@ module.exports = app => {
 
       const stream = await ctx.getFileStream();
 
-      const filename = path.basename(stream.filename);
-      const extname = path.extname(stream.filename).toLowerCase();
-
-      await app.filestore.createFromStream({ ctx, stream, _id: filename, extname });
+      await app.filestore.createFromStream({ stream, filename: stream.filename });
     }
   };
 };
@@ -125,10 +134,8 @@ module.exports = app => {
 
       const stream = await ctx.getFileStream();
 
-      const filename = path.basename(stream.filename);
-      const extname = path.extname(stream.filename).toLowerCase();
-      // get instance
-      await app.filestore.get('instance1').createFromStream({ ctx, stream, _id: filename, extname });
+      // get instanc
+      await app.filestore.get('instance1').createFromStream({ stream, filename: stream.filename  });
     }
   };
 };
@@ -147,10 +154,7 @@ module.exports = app => {
 
       const stream = await ctx.getFileStream();
 
-      const filename = path.basename(stream.filename);
-      const extname = path.extname(stream.filename).toLowerCase();
-
-      await app.filestore.createFromStream({ ctx, stream, _id: filename, extname });
+      await app.filestore.createFromStream({ stream, filename: stream.filename });
     }
   };
 };
@@ -163,16 +167,14 @@ module.exports = app => {
 module.exports = app => {
   return class HomeController extends app.Controller {
     async createByUrl() {
-      const { ctx, app } = this;
+      const { app } = this;
 
       const { url } = ctx.request.body;
       const filename = path.basename(url);
       const extname = path.extname(url).toLowerCase();
       const sourceUrl = await app.filestore.createFromUrl({
-        ctx,
         url,
-        _id: filename,
-        extname,
+        filename: filename + extname ,
       });
     }
   };
@@ -192,17 +194,13 @@ module.exports = app => {
       const filename = path.basename(url);
       const extname = path.extname(url).toLowerCase();
 
-      await app.filestore.destroy({
-        ctx,
-        _id: filename,
-        extname: extname,
-      });
+      await app.filestore.destroy(filename + extname);
     }
   };
 };
 ```
 
-### getFile
+### download
 
 ```js
 // app/controller/home.js
@@ -233,10 +231,9 @@ module.exports = app => {
         ctx.status = 404;
         return;
       }
-      return app.filestore.get('uploads').getFile({
+      return app.filestore.get('uploads').download({
         filename,
-        ctx,
-        attachment,
+        ctx
       });
     }
   };

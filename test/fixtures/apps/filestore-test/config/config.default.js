@@ -10,8 +10,14 @@ exports.filestore = {
   clients: {
     instance1: {
       type: 'AliOss',
-      bucketCategory: 'uploads',
-      prefixUrl: '/source/upload',
+      options: {
+        accessKeyId: 'access key',
+        accessKeySecret: 'access key secret',
+        bucket: 'you bucket',
+        region: 'oss-cn-hangzhou',
+        timeout: '60s',
+      },
+      category: 'uploads',
     },
     instance2: {
       type: 'FileSystem',
